@@ -1,0 +1,48 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(120deg, #ff7e5f, #feb47b, #ff7e5f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    position: relative;
+    padding: 15px 30px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background: transparent;
+    color: white;
+    overflow: hidden;
+    bottom: 0;
+}
+
+button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: white;
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+button:hover::before{
+    width: 100%;
+}
+
+button:hover{
+    color: #ff7e5f;
+}
+
+button:active{
+    transform: scaleY(0.95);
+}
