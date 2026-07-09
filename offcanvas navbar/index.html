@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <!-- Bootstrap CSS: gives us all the navbar/offcanvas classes used below -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Bootstrap JS bundle: required for the toggler button and offcanvas panel to actually work -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Outer navbar wrapper -->
+    <!-- navbar-expand-lg: stays expanded above the lg breakpoint (992px), collapses into hamburger below it -->
+    <!-- navbar-dark: makes text/icons light colored (for use on dark backgrounds) -->
+    <!-- bg-dark: dark background color for the whole navbar -->
+    <div class = "navbar navbar-expand-lg navbar-dark bg-dark ">
+
+        <!-- container-fluid: full-width inner wrapper, handles padding/layout of navbar contents -->
+        <div class = "container-fluid">
+
+            <!-- Hamburger button, only visible below the lg breakpoint -->
+            <!-- data-bs-toggle="offcanvas": tells Bootstrap JS this button opens/closes an offcanvas panel -->
+            <!-- data-bs-target="#mainmenu": points to the id of the offcanvas panel to control -->
+            <button class = "navbar-toggler" type = "button" data-bs-toggle="offcanvas" data-bs-target="#mainmenu">
+                <!-- navbar-toggler-icon: the hamburger icon itself (background image via CSS) -->
+                <span class = "navbar-toggler-icon"></span>
+            </button>            
+
+            <!-- navbar-brand: logo/site identity, height set manually to keep it from rendering oversized -->
+            <img class = "navbar-brand" src = "logo.png" alt="logo" height="70">
+
+            <!-- Offcanvas panel: slides in from the side instead of dropping down inline -->
+            <!-- offcanvas-end: slides in from the right (offcanvas-start would be left) -->
+            <!-- text-bg-dark: dark background + light text for the panel -->
+            <!-- tabindex="-1": lets Bootstrap JS programmatically focus this panel when it opens, without adding it to normal Tab order -->
+            <!-- id="mainmenu": must match data-bs-target above -->
+            <div class = "offcanvas offcanvas-end text-bg-dark" tabindex="-1" id = "mainmenu">
+
+                <!-- Header row of the panel: title + close button -->
+                <div class="offcanvas-header">
+                    <!-- Just the panel's heading text -->
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <!-- Bootstrap's built-in close (X) button -->
+                    <!-- btn-close-white: inverts the icon to white so it's visible on the dark background -->
+                    <!-- data-bs-dismiss="offcanvas": makes clicking this button close the panel -->
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                </div>
+
+                <!-- Body of the panel: holds the actual nav links -->
+                <div class="offcanvas-body">
+                <!-- navbar-nav: flex container for nav items, strips default ul bullet styling -->
+                <!-- gap-3: adds even spacing between each li.nav-item -->
+                <ul class="navbar-nav gap-3">
+
+                    <!-- nav-item: wrapper for each individual link -->
+                    <li class="nav-item">
+                        <!-- nav-link: styles the link -->
+                        <!-- active: highlights this as the current page -->
+                        <!-- ms-3: extra left margin for spacing -->
+                        <a class = "nav-link active ms-3" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- disabled: grays out the link and makes it non-clickable -->
+                        <a class="nav-link disabled ms-3" href="#">Burgers</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled ms-3" href="#">Pizzas</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled ms-3" href="#">Drinks</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled ms-3" href="#">Sauces</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled ms-3" href="#">About</a> 
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
